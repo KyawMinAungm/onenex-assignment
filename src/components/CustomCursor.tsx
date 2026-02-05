@@ -7,8 +7,8 @@ export default function CustomCursor() {
   const [isHovered, setIsHovered] = useState(false);
 
   // Smooth ဖြစ်အောင် useSpring ကို သုံးပါမယ်
-  const cursorX = useSpring(0, { stiffness: 300, damping: 28 });
-  const cursorY = useSpring(0, { stiffness: 300, damping: 28 });
+  const cursorX = useSpring(0, { stiffness: 200, damping: 28 });
+  const cursorY = useSpring(0, { stiffness: 200, damping: 28 });
 
   useEffect(() => {
     const moveMouse = (e: MouseEvent) => {
@@ -34,7 +34,7 @@ export default function CustomCursor() {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 w-4 h-4  bg-white rounded-full p-1 border-2 border-background pointer-events-none z-9999 hidden md:block"
+      className="fixed top-0 left-0 w-4 h-4  bg-white rounded-full p-1 border-2 border-primary pointer-events-none z-9999 hidden md:block"
       style={{
       
         translateX: cursorX,
@@ -46,7 +46,7 @@ export default function CustomCursor() {
         mixBlendMode: isHovered ? "difference" : "normal", // စာသားပေါ်ရောက်ရင် အရောင်ပြောင်းသွားစေဖို့
       }}
     >
-      <div className="bg-background w-1 h-1 rounded-full"></div>
+      <div className="bg-primary w-1 h-1 rounded-full"></div>
     </motion.div>
   );
 }
