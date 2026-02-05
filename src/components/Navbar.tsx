@@ -29,15 +29,15 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo */}
-        <Link href="/" className="text-xl font-bold tracking-tighter text-white">
-          ONENEX<span className="text-blue-600">.</span>
+        <Link href="/" className="text-xl font-bold tracking-tighter text-foreground">
+          ONENEX
         </Link>
 
         {/* Links */}
-        <div className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
-          <Link href="/services" className="hover:text-white transition">SERVICES</Link>
-          <Link href="/cases" className="hover:text-white transition">CASES</Link>
-          <Link href="/contact" className="hover:text-white transition">CONTACT US</Link>
+        <div className="hidden md:flex items-center gap-8 text-sm font-medium text-foreground">
+          <Link href="/services" className="hover:text-foreground transition">SERVICES</Link>
+          <Link href="/cases" className="hover:text-foreground transition">CASES</Link>
+          <Link href="/contact" className="hover:text-foreground transition">CONTACT US</Link>
           
          
         </div>
