@@ -6,8 +6,8 @@ import { useEffect } from "react";
 const themes: Record<string, { bg: string; fg: string }> = {
   "/": { bg: "#000000", fg: "#DBFF66" },         
   "/services": { bg: "#000000", fg: "#00E4FF" },  
-  "/cases": { bg: "#000000", fg: "#7038FF" },     
-  "/contact": { bg: "#0052cc", fg: "#0060EE" },   
+  "/cases": { bg: "#F6F5EC", fg: "#7038FF" },     
+  "/contact": { bg: "#FFFFFF", fg: "#0060EE" },   
 };
 
 function findThemeForPath(pathname: string | null) {

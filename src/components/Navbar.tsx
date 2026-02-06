@@ -10,6 +10,7 @@ import Link from "next/link";
 import { ArrowUpLeft } from "lucide-react";
 
 import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
+import { usePathname } from "next/navigation";
 
 const navLinks = [
   { name: "HOME", href: "/" },
@@ -30,8 +31,14 @@ export default function Navbar() {
   const [hidden, setHidden] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
+  const pathname = usePathname();
+  const isContactPage = pathname === "/contact-us";
   const logoColor = isOpen ? "text-primary" : "text-foreground";
-  const toggleColor = isOpen ? "bg-primary" : "bg-foreground";
+  const toggleColor = isOpen
+    ? "bg-primary"
+    : isContactPage
+      ? "bg-black"
+      : "bg-foreground";
 
   // Scroll position ကို စောင့်ကြည့်ပြီး Navbar ကို ဖျောက်/ပြ လုပ်ခြင်း
   useMotionValueEvent(scrollY, "change", (latest) => {
@@ -69,7 +76,7 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="hover:text-foreground transition"
+              className={`transition ${isContactPage ? "text-black" : "text-foreground"}`}
             >
               {link.name}
             </Link>
@@ -77,7 +84,10 @@ export default function Navbar() {
         </div>
         {/* Mobile Toggle Button */}
         <div className="lg:hidden  font-sans flex items-center justify-center gap-4">
-          <Link href="/contact-us" className="">
+          <Link
+            href="/contact-us"
+            className={`${isContactPage ? "text-black hidden" : "text-foreground"} text-xs font-bold`}
+          >
             GET IN TOUCH
           </Link>
           <button
