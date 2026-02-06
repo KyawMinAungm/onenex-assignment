@@ -10,6 +10,7 @@ import Link from "next/link";
 import { ArrowUpLeft } from "lucide-react";
 
 import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
+import { usePathname } from "next/navigation";
 
 const navLinks = [
   { name: "HOME", href: "/" },
@@ -32,6 +33,9 @@ export default function Navbar() {
 
   const logoColor = isOpen ? "text-primary" : "text-foreground";
   const toggleColor = isOpen ? "bg-primary" : "bg-foreground";
+
+  const pathname = usePathname();
+  const isContactPage = pathname === "/contact-us";
 
   // Scroll position ကို စောင့်ကြည့်ပြီး Navbar ကို ဖျောက်/ပြ လုပ်ခြင်း
   useMotionValueEvent(scrollY, "change", (latest) => {
@@ -69,7 +73,7 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="hover:text-foreground transition"
+              className={`transition ${isContactPage ? "text-black" : "text-foreground"}`}
             >
               {link.name}
             </Link>

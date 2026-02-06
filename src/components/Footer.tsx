@@ -1,9 +1,9 @@
 "use client";
-import { ArrowRight } from "lucide-react";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
+import Button from "./Button";
 
 const links = [
   { name: "Cases", href: "/cases" },
@@ -33,18 +33,21 @@ export default function Footer() {
       className={` ${isCasesPage ? "bg-foreground text-white" : "bg-white text-primary"}  md:sticky bottom-0 -z-10 pt-20 pb-10 px-6 lg:px-20`}
     >
       <div className={`max-w-7xl mx-auto`}>
-        <div className="lg:flex flex-row  items-center mb-12">
-          <h2 className="lg:text-[50px]/snug text-3xl  mb-6">
-            WE ARE YOUR PATNER FOR INNOVATION & GROWTH
-          </h2>
-          <Link
-            href="/contact-us"
-            className={`w-max px-4 flex items-center justify-center gap-2 font-sharp py-2 border text-nowrap text-xs font-bold  ${isContactPage ? "bg-primary text-white" : "bg-white text-primary"}`}
-          >
-            GET IN TOUCH
-            <ArrowRight />
-          </Link>
-        </div>
+        {!isContactPage && (
+          <div className="lg:flex flex-row  items-start  mb-12">
+            <h2 className="lg:text-[50px]/snug text-3xl  mb-6">
+              WE ARE YOUR PATNER FOR INNOVATION & GROWTH
+            </h2>
+            <Link href="/contact-us" className="mt-4">
+              <Button
+                label="GET IN TOUCH"
+                bg={isCasesPage ? "foreground" : "white"}
+                fg={isCasesPage ? "white" : "primary"}
+                className=""
+              />
+            </Link>
+          </div>
+        )}
         <div className="font-sharp grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-12">
           <div className="flex flex-col gap-4">
             <h6>WE ONENEX</h6>
@@ -87,7 +90,9 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className={`md:border-t ${isCasesPage ? "border-white" : "border-primary"} md:py-8  flex flex-col md:row justify-between items-center  text-xs`}>
+        <div
+          className={`md:border-t ${isCasesPage ? "border-white" : "border-primary"} md:py-8  flex flex-col md:row justify-between items-center  text-xs`}
+        >
           <p>© 2026 Kyaw Min Aung - Developed for Nura Next Assignment.</p>
         </div>
       </div>
