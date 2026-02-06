@@ -36,7 +36,6 @@ export default function CustomCursor() {
     <motion.div
       className="fixed top-0 left-0 w-4 h-4  bg-white rounded-full p-1 border-2 border-primary pointer-events-none z-9999 hidden md:block"
       style={{
-      
         translateX: cursorX,
         translateY: cursorY,
       }}

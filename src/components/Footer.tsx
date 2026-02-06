@@ -1,39 +1,94 @@
+"use client";
+import { ArrowRight } from "lucide-react";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
+
+const links = [
+  { name: "Cases", href: "/cases" },
+  { name: "Contact Us", href: "/contact-us" },
+  { name: "Services", href: "/services" },
+];
+
+const services = [
+  "UI/UX Development",
+  "Web Development",
+  "Android Development",
+  "iOS Development",
+];
+const socials = [
+  { icon: FaFacebook, href: "https://facebook.com" },
+  { icon: FaInstagram, href: "https://instagram.com" },
+  { icon: FaLinkedin, href: "https://linkedin.com" },
+  { icon: FaYoutube, href: "https://youtube.com" },
+];
 
 export default function Footer() {
+  const pathname = usePathname();
+  const isCasesPage = pathname === "/cases";
+  const isContactPage = pathname === "/contact-us";
   return (
-    <footer className="font-sans sticky bottom-0 -z-10 border-t border-gray-800 pt-20 pb-10 px-6 ">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-          {/* Logo Section */}
-          <div className="md:col-span-2">
-            <h2 className="text-2xl font-bold mb-6">ONENEX <span className="">RECREATION</span></h2>
-            <p className="text-white max-w-sm mb-6">
-              Leading digital agency in Myanmar, providing innovative technology solutions.
-            </p>
+    <footer
+      className={` ${isCasesPage ? "bg-foreground text-white" : "bg-white text-primary"}  md:sticky bottom-0 -z-10 pt-20 pb-10 px-6 lg:px-20`}
+    >
+      <div className={`max-w-7xl mx-auto`}>
+        <div className="lg:flex flex-row  items-center mb-12">
+          <h2 className="lg:text-[50px]/snug text-3xl  mb-6">
+            WE ARE YOUR PATNER FOR INNOVATION & GROWTH
+          </h2>
+          <Link
+            href="/contact-us"
+            className={`w-max px-4 flex items-center justify-center gap-2 font-sharp py-2 border text-nowrap text-xs font-bold  ${isContactPage ? "bg-primary text-white" : "bg-white text-primary"}`}
+          >
+            GET IN TOUCH
+            <ArrowRight />
+          </Link>
+        </div>
+        <div className="font-sharp grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-12">
+          <div className="flex flex-col gap-4">
+            <h6>WE ONENEX</h6>
+            {links.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className={`text-sm cursor-pointer ${isCasesPage ? "text-white" : "text-black"}`}
+              >
+                {link.name}
+              </Link>
+            ))}
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-lg font-semibold mb-6">Explore</h3>
-            <ul className="space-y-4 text-white">
-              <li><Link href="/services" className="hover:text-white transition">Services</Link></li>
-              <li><Link href="/cases" className="hover:text-white transition">Cases</Link></li>
-              <li><Link href="/contact" className="hover:text-white transition">Contact</Link></li>
-            </ul>
+          <div className="flex flex-col gap-4">
+            <h6>WE OFFER</h6>
+            {services.map((service) => (
+              <p
+                key={service}
+                className={`text-sm ${isCasesPage ? "text-white" : "text-black"}`}
+              >
+                {service}
+              </p>
+            ))}
           </div>
-
-          {/* Contact Info */}
-          <div>
-            <h3 className="text-lg font-semibold mb-6">Office</h3>
-            <p className="text-white">Yangon, Myanmar</p>
-            <p className="text-white">contact@example.com</p>
+          <div className="flex mt-8 md:mt-0 flex-col items-center justify-center gap-4 w-full col-span-3  md:col-span-1 md:items-start md:justify-start">
+            <h6 className="hidden md:block">FOLLOW US</h6>
+            <div className=" flex items-center gap-3">
+              {socials.map((social, index) => (
+                <Link
+                  key={index}
+                  className={`w-8 h-8  rounded-full flex items-center justify-center cursor-pointer  ${isCasesPage ? "bg-white text-foreground" : "bg-primary text-white"}`}
+                  href={social.href}
+                  target="_blank"
+                >
+                  <social.icon className="h-5 w-5" />
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
 
-        <div className="border-t border-gray-900 pt-8 flex flex-col md:row justify-between items-center text-white text-sm">
-          <p>© 2024 Kyaw Min Aung - Developed for Nura Next Assignment.</p>
+        <div className={`md:border-t ${isCasesPage ? "border-white" : "border-primary"} md:py-8  flex flex-col md:row justify-between items-center  text-xs`}>
+          <p>© 2026 Kyaw Min Aung - Developed for Nura Next Assignment.</p>
         </div>
       </div>
     </footer>

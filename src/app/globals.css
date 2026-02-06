@@ -1,4 +1,5 @@
 @import url(https://db.onlinewebfonts.com/c/91d3afe918937141b6ae8e43b1005bc8?family=Sharp+Grotesk+Book+25+Regular);
+@import url(https://db.onlinewebfonts.com/c/f4a88c23d1f27870fb1e458ace76a752?family=Sharp+Grotesk+Book+20+Regular);
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
 @import "tailwindcss";
 
@@ -14,6 +15,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-sharp : "Sharp Grotesk Book 20 Regular", Arial, Helvetica, sans-serif;
   --font-orbitron : "Orbitron", Arial, Helvetica, sans-serif;
 }
 
@@ -27,6 +29,6 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: "Sharp Grotesk Book 25 Regular","Orbitron",Arial, Helvetica, sans-serif;
+  font-family: "Sharp Grotesk Book 25 Regular","Sharp Grotesk Book 20 Regular", "Orbitron", Arial, Helvetica, sans-serif;
   transition: background-color 0.8s ease, color 0.8s ease;
 }

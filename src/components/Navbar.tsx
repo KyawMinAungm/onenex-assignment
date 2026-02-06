@@ -8,7 +8,8 @@ import {
 } from "framer-motion";
 import Link from "next/link";
 import { ArrowUpLeft } from "lucide-react";
-import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
+
+import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
 
 const navLinks = [
   { name: "HOME", href: "/" },
@@ -18,10 +19,10 @@ const navLinks = [
 ];
 
 const socials = [
-  { icon: Facebook, href: "https://facebook.com" },
-  { icon: Instagram, href: "https://instagram.com" },
-  { icon: Linkedin, href: "https://linkedin.com" },
-  { icon: Youtube, href: "https://youtube.com" },
+  { icon: FaFacebook, href: "https://facebook.com" },
+  { icon: FaInstagram, href: "https://instagram.com" },
+  { icon: FaLinkedin, href: "https://linkedin.com" },
+  { icon: FaYoutube, href: "https://youtube.com" },
 ];
 
 export default function Navbar() {
@@ -56,7 +57,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link
           href="/"
-          className={`text-2xl z-[101] font-orbitron tracking-tighter ${logoColor}`}
+          className={`text-2xl z-[101] font-semibold font-orbitron tracking-tighter ${logoColor}`}
         >
           ONENEX
         </Link>
@@ -124,22 +125,26 @@ export default function Navbar() {
                 </div>
               </Link>
             ))}
-            
-            <div className="flex gap-4 mt-6 flex-row items-center justify-center mx-auto">
-              {socials.map((social) => (
-                
-                <a className="w-8 h-8 bg-primary rounded-full flex items-center justify-center"
-                  key={social.href}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <social.icon className="w-4 h-4  text-[#DBFF66] hover:text-blue-500 transition" />
-                </a>
-              ))}
-            </div>
-            <div className="text-center w-full ">
-              <h4 className=" text-black font-sans text-center mx-auto">© 2024 ONENEX. ALL RIGHTS RESERVED</h4>
+
+            <div className="mx-auto w-[95%] py-10 absolute bottom-0">
+              <div className="flex gap-4  flex-row items-center justify-center mx-auto mb-6">
+                {socials.map((social) => (
+                  <a
+                    className="w-8 h-8 bg-primary rounded-full flex items-center justify-center"
+                    key={social.href}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <social.icon className="w-4 h-4  text-[#DBFF66] hover:text-blue-500 transition" />
+                  </a>
+                ))}
+              </div>
+              <div className="text-center w-full ">
+                <h4 className=" text-black font-sans text-center mx-auto">
+                  © 2024 ONENEX. ALL RIGHTS RESERVED
+                </h4>
+              </div>
             </div>
           </motion.div>
         )}
