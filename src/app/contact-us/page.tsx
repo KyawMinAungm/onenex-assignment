@@ -35,7 +35,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground  py-24">
+    <div className="min-h-screen bg-background text-foreground flex items-center  py-24">
       <div className="max-w-7xl px-6 lg:px-20 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
         {/* Left Side: Header */}
         <div className="space-y-8">
