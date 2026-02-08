@@ -30,9 +30,9 @@ export default function Footer() {
   const isContactPage = pathname === "/contact-us";
   return (
     <footer
-      className={` ${isCasesPage ? "bg-foreground text-white" : "bg-white text-primary"}  md:sticky bottom-0 -z-10 pt-20 pb-10 px-6 lg:px-20`}
+      className={`w-full min-h-screen flex items-center ${isCasesPage ? "bg-foreground text-white" : "bg-white text-primary"}  md:sticky mx-auto bottom-0 -z-10 pt-20 pb-10 px-6 lg:px-20`}
     >
-      <div className={`max-w-7xl mx-auto`}>
+      <div className={`w-full mx-auto`}>
         {!isContactPage && (
           <div className="lg:flex flex-row  items-start  mb-12">
             <h2 className="lg:text-[50px]/snug text-3xl  mb-6">

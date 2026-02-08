@@ -58,9 +58,9 @@ export default function Navbar() {
       }}
       animate={hidden ? "hidden" : "visible"}
       transition={{ duration: 0.35, ease: "easeInOut" }}
-      className="fixed top-0 w-full z-50 bg-transparent backdrop-blur-md  px-6 lg:px-20 py-4 lg:py-6"
+      className="fixed top-0 w-full z-50 bg-background    py-4 lg:py-6"
     >
-      <div className="max-w-7xl mx-auto flex justify-between items-center">
+      <div className="w-full px-6 lg:px-20 mx-auto flex justify-between items-center">
         {/* Logo */}
         <Link
           href="/"

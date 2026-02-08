@@ -1,6 +1,6 @@
-import { ArrowRight } from "lucide-react";
+import Button from "@/components/Button";
 import Link from "next/link";
-import React from "react";
+
 
 export default function page() {
   return (
@@ -11,7 +11,12 @@ export default function page() {
         <h2 className="text-3xl/relaxed text-gray-500">
           Sorry, we couldn&apos;t find the page.
         </h2>
-        <Link href="/" className="flex font-sans items-center hover:text-white hover:bg-background border border-background text-background  p-2 mt-10 "><span className="text-xs font-bold">GO HOME</span> <ArrowRight/> </Link>
+        <Link
+          href="/"
+          className="flex font-sans items-center hover:text-white hover:bg-background border border-background text-background  p-2 mt-10 "
+        >
+          <Button label="GO HOME" />
+        </Link>
       </div>
     </section>
   );

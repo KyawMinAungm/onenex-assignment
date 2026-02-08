@@ -25,7 +25,7 @@ export default function CustomCursor() {
     const handleHover = () => setIsHovered(true);
     const handleUnhover = () => setIsHovered(false);
 
-    const targets = document.querySelectorAll(".view,.cursor-pointer");
+    const targets = document.querySelectorAll(".view,.cursor-pointer,image");
     targets.forEach((target) => {
       target.addEventListener("mouseenter", handleHover);
       target.addEventListener("mouseleave", handleUnhover);
@@ -40,12 +40,13 @@ export default function CustomCursor() {
         translateY: cursorY,
       }}
       animate={{
-        scale: isHovered ? 2.5 : 1,
-        backgroundColor: isHovered ? "rgba(255, 255, 255, 0.1)" : "white",
-        mixBlendMode: isHovered ? "difference" : "normal", // စာသားပေါ်ရောက်ရင် အရောင်ပြောင်းသွားစေဖို့
+        scale: isHovered ? 5 : 1,
+        backgroundColor: "white",
+        border: isHovered ? "1px solid #0060EE" : "",
+        
       }}
     >
-      <div className="bg-primary w-1 h-1 rounded-full"></div>
+      {!isHovered && <div className="bg-primary w-1 h-1 rounded-full"></div>}
     </motion.div>
   );
 }

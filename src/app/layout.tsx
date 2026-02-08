@@ -34,9 +34,7 @@ export default function RootLayout({
         <ThemeProvider>
           <CustomCursor />
           <Navbar />
-            <main className="">{children}</main>
-         
-
+          <main className="">{children}</main>
           <Footer />
         </ThemeProvider>
       </body>
