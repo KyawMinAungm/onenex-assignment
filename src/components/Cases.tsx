@@ -42,10 +42,10 @@ export default function Cases({ movies }: { movies: MovieType[] }) {
         {years.map((year) => (
           <section 
             key={year} 
-            ref={(el: HTMLDivElement | null) => (sectionRefs.current[year] = el)} // Ref ကို သတ်မှတ်ခြင်း
+            ref={(el: HTMLDivElement | null) => { sectionRefs.current[year] = el; }} // Ref ကို သတ်မှတ်ခြင်း
             className="scroll-mt-32" // Scroll လုပ်ရင် Header နဲ့ မကပ်အောင် gap ပေးတာပါ
           >
-            <h2 className="text-7xl mb-12 text-transparent text-outline-primary uppercase sticky top-40 -z-10 opacity-30">
+            <h2 className="text-7xl mb-12 text-transparent text-outline-primary   ">
               {year}
             </h2>
             
