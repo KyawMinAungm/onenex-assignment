@@ -21,8 +21,8 @@ export default function ScrollReveal({ title, detail, description }: ScrollRevea
   return (
     <div ref={container} className=" flex justify-center mb-20 ">
       
-        <motion.h2
-        
+        <motion.div
+      
           style={{ opacity: scrollYProgress }} // Scroll progress အလိုက် လင်းလာမယ်
           className=" border-white pb-10 w-full border-b "
         >
@@ -35,7 +35,7 @@ export default function ScrollReveal({ title, detail, description }: ScrollRevea
                 </div>
             </div>
           
-        </motion.h2>
+        </motion.div>
       
     </div>
   );

@@ -12,11 +12,11 @@ export default async function CasesPage() {
   const movies: MovieType[] = data.results.slice(0, 12);
   // const [activeTab, setActiveTab] = useState("")
   return (
-    <main className="min-h-screen pt-20 pb-10  max-w-7xl bg-background mx-auto">
+    <main className="pt-20 pb-10 bg-background mx-auto">
       {/* Page Header */}
-      <section className="pb-20">
+      <section className="pb-20 ">
         <HeroHighlight>
-          <p className="text-4xl md:text-6xl leading-normal max-w-7xl mx-auto px-6 lg:px-20 text-[#838383] mt-4 ">
+          <p className="text-4xl container-full md:text-6xl leading-normal text-[#838383] mt-4 ">
             We are in the business of building capabilities for our clients,
           </p>
 
@@ -30,17 +30,17 @@ export default async function CasesPage() {
             </InfiniteScroll>
           </div>
 
-          <p className="max-w-7xl mx-auto px-6 lg:px-20 text-4xl md:text-6xl text-end leading-normal mb-20 text-[#838383] mt-4 ">
+          <p className=" mx-auto container-full text-4xl md:text-6xl text-end leading-normal mb-20 text-[#838383] mt-4 ">
             from startup to industry leaders
           </p>
         </HeroHighlight>
       </section>
 
-      <section className="max-w-7xl mx-auto px-6 lg:px-20">
+      <section className="container-full">
         <Cases movies={movies} />
       </section>
 
-      <section className="mt-20 text-center min-h-screen max-w-7xl mx-auto px-6 lg:px-20  flex flex-col justify-center">
+      <section className="mt-20 text-center min-h-screen  mx-auto container-full  flex flex-col justify-center">
         <p className="text-black font-sharp text-[20px]">
           SEEKING PARTNERS IN CHANGE?
         </p>
