@@ -1,12 +1,12 @@
 @import url(https://db.onlinewebfonts.com/c/91d3afe918937141b6ae8e43b1005bc8?family=Sharp+Grotesk+Book+25+Regular);
 @import url(https://db.onlinewebfonts.com/c/f4a88c23d1f27870fb1e458ace76a752?family=Sharp+Grotesk+Book+20+Regular);
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap");
 @import "tailwindcss";
 
 :root {
   --background: #ffffff;
-  --foreground: #0060EE;
-  --primary : #0060EE;
+  --foreground: #0060ee;
+  --primary: #0060ee;
 }
 
 @theme inline {
@@ -15,8 +15,8 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --font-sharp : "Sharp Grotesk Book 20 Regular", Arial, Helvetica, sans-serif;
-  --font-orbitron : "Orbitron", Arial, Helvetica, sans-serif;
+  --font-sharp: "Sharp Grotesk Book 20 Regular", Arial, Helvetica, sans-serif;
+  --font-orbitron: "Orbitron", Arial, Helvetica, sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -29,19 +29,28 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: "Sharp Grotesk Book 25 Regular","Sharp Grotesk Book 20 Regular", "Orbitron", Arial, Helvetica, sans-serif;
-  transition: background-color 0.8s ease, color 0.8s ease;
+  font-family:
+    "Sharp Grotesk Book 25 Regular", "Sharp Grotesk Book 20 Regular",
+    "Orbitron", Arial, Helvetica, sans-serif;
+  transition:
+    background-color 0.8s ease,
+    color 0.8s ease;
 }
 
 .text-outline {
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: var(--foreground);
- 
 }
 
 .text-outline-primary {
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: var(--primary);
- 
+}
+.text-outline-white {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: white;
 }
 
+.container-full {
+  @apply mx-auto w-full px-6 lg:px-20;
+}
