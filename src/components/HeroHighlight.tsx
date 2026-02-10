@@ -39,12 +39,12 @@ export default function HeroHighlight({
   }, [cursorX, cursorY]);
 
   return (
-    <div ref={wrapperRef} className="relative overflow-hidden">
+    <div ref={wrapperRef} className="relative ">
       <div className="relative z-10">{children}</div>
 
       <motion.div
         // absolute inside wrapper, behind children (z-0) and clipped by overflow-hidden
-        className="absolute left-0 top-0 w-75 h-75 bg-[#E8FAA8]  blur-xl rounded-full pointer-events-none z-0"
+        className="absolute left-0 top-0 w-75 h-75 bg-foreground invert  blur-3xl rounded-full pointer-events-none z-0"
         style={{
           translateX: cursorX,
           translateY: cursorY,

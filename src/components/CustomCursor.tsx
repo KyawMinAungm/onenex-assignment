@@ -25,7 +25,7 @@ export default function CustomCursor() {
     const handleHover = () => setIsHovered(true);
     const handleUnhover = () => setIsHovered(false);
 
-    const targets = document.querySelectorAll(".view,.cursor-pointer,image");
+    const targets = document.querySelectorAll(".view");
     targets.forEach((target) => {
       target.addEventListener("mouseenter", handleHover);
       target.addEventListener("mouseleave", handleUnhover);

@@ -13,10 +13,10 @@ export default function Movie({
   return (
     <Link
       href={`/cases/${movie.id}`}
-      className={`lg:h-64 overflow-hidden flex ${isReverse ? "lg:flex-row-reverse" : "lg:flex-row"} flex-col gap-y-6  `}
+      className={`view overflow-hidden flex ${isReverse ? "lg:flex-row-reverse" : "lg:flex-row"} flex-col gap-y-6  `}
     >
       <div
-        className={` lg:w-[40%] ${isReverse ? "lg:ms-[10%]" : "lg:me-[10%]"} aspect-video view`}
+        className={` lg:w-[40%]   ${isReverse ? "lg:ms-[10%]" : "lg:me-[10%]"} aspect-video `}
       >
         <Image
           src={`${baseUrl}${movie.backdrop_path}`}
