@@ -2,6 +2,12 @@
 
 Minimal Next.js app with component-driven UI, route-based theming, and a contact form.
 
+## 🚀 Installation
+1. Clone the repo: `git clone https://github.com/KyawMinAungm/onenex-assignment.git`
+2. Install dependencies: `npm install`
+3. add .env: change filename .env.exmaple to .env
+4. Run locally: `npm run dev`
+
 ## Quick start
 
 Install and run the dev server:
@@ -19,6 +25,18 @@ npm start
 ```
 
 See [package.json](package.json) for available scripts.
+
+
+# ✨ Key Features
+- **Stacking Sticky Scroll:** Recreated the premium image stacking effect seen on professional agency sites.
+- **Dynamic Typewriter:** An advanced typing/deleting effect for the hero headline.
+- **TMDB API Integration:** Fetches real-time movie data with year-based filtering.
+- **Responsive Design:** Fully optimized for all screen sizes.
+
+## 🛠️ Technical Decisions
+- **Framer Motion:** Chosen for its declarative approach to complex scroll-linked animations.
+- **App Router:** Utilized Next.js 14's App Router for efficient routing and server-side optimization.
+- **State Management:** Used React's `useMemo` and `useState` for optimized filtering logic without unnecessary re-renders.
 
 ## Project structure
 
